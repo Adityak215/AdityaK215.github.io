@@ -26,7 +26,7 @@ export default function HeroContent() {
           <h1 className="mt-6 max-w-4xl text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
             Aditya Kumar
           </h1>
-          <h2 className="mt-6 max-w-4xl text-5xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
+          <h2 className="mt-6 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-5xl">
             Software Development Engineer
           </h2>
 

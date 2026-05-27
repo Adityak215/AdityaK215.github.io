@@ -274,11 +274,60 @@ export function MagneticButton({
 
 export function FloatingNavbar() {
     const items = [
-        "About",
-        "Skills",
-        "Experience",
-        "Projects",
-        "Contact",
+        {
+            label: "About",
+            href: "#about",
+            icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4Z" />
+                    <path d="M6 20.5c0-2.5 2-4.5 6-4.5s6 2 6 4.5" />
+                </svg>
+            ),
+        },
+        {
+            label: "Skills",
+            href: "#skills",
+            icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4">
+                    <path d="M12 3v18" />
+                    <path d="M5 12h14" />
+                    <path d="M7.5 7.5l9 9" />
+                    <path d="M16.5 7.5l-9 9" />
+                </svg>
+            ),
+        },
+        {
+            label: "Experience",
+            href: "#experience",
+            icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4">
+                    <rect x="3" y="7" width="18" height="14" rx="2" />
+                    <path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" />
+                </svg>
+            ),
+        },
+        {
+            label: "Projects",
+            href: "#projects",
+            icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4">
+                    <path d="M4 6h16" />
+                    <path d="M4 10h16" />
+                    <path d="M4 14h8" />
+                    <path d="M4 18h8" />
+                </svg>
+            ),
+        },
+        {
+            label: "Contact",
+            href: "#contact",
+            icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4">
+                    <path d="M4 5h16v14H4z" />
+                    <path d="M4 5l8 7 8-7" />
+                </svg>
+            ),
+        },
     ];
 
     return (
@@ -297,50 +346,49 @@ export function FloatingNavbar() {
             className="
                 fixed
                 top-6
-                left-1/2
+                inset-x-3
                 z-50
-                -translate-x-1/2
                 rounded-full
                 border
                 border-white/10
                 bg-black/30
-                px-6
-                py-3
+                px-3
+                py-2
                 backdrop-blur-xl
                 shadow-2xl
+                lg:left-1/2
+                lg:inset-x-auto
+                lg:-translate-x-1/2
+                lg:px-6
+                lg:py-2
+                lg:max-w-4xl
             "
         >
-            <div className="flex items-center gap-6">
-                {/* Add the new navigation item as the first element */}
+            <div className="flex min-w-0 flex-nowrap items-center justify-between gap-2 overflow-x-auto lg:flex-wrap lg:justify-center lg:gap-4 lg:overflow-visible">
                 <a
                     href="#home"
-                    className="group inline-flex items-center gap-3"
+                    className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm text-white transition shadow-lg shadow-black/20 hover:border-white/20 hover:bg-white/10 md:px-4 md:py-2"
                 >
-                    <span className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-sm font-semibold text-white shadow-lg shadow-black/20 transition group-hover:border-white/20 group-hover:bg-white/10">
-                        {/* <Image src="/aditya.jpeg" alt="Aditya Kumar" fill priority className="object-cover" /> */}
+                    <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-black/30 text-white md:h-10 md:w-10">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4Z" />
+                            <path d="M6 20.5c0-2.5 2-4.5 6-4.5s6 2 6 4.5" />
+                        </svg>
                     </span>
-                    <span>
-                        <span className="block text-sm font-semibold text-white">
-                            Aditya Kumar
-                        </span>
-                        <span className="block text-xs text-white/45">
-                            Software Development Engineer
-                        </span>
+                    <span className="hidden lg:block">
+                        <span className="block text-sm font-semibold text-white">Aditya Kumar</span>
+                        <span className="block text-xs text-white/45">Software Development Engineer</span>
                     </span>
                 </a>
 
                 {items.map((item) => (
                     <a
-                        key={item}
-                        href={`#${item.toLowerCase()}`}
-                        className="
-                            text-sm
-                            text-white/60
-                            transition
-                            hover:text-white
-                        "
+                        key={item.label}
+                        href={item.href}
+                        className="inline-flex flex-1 min-w-[2rem] items-center justify-center rounded-full border border-white/10 bg-white/5 px-2 py-2 text-white/60 transition hover:border-white/20 hover:bg-white/10 hover:text-white lg:flex-none lg:min-w-[initial] lg:px-4 lg:py-2"
                     >
-                        {item}
+                        <span className="block lg:hidden">{item.icon}</span>
+                        <span className="hidden text-sm lg:block">{item.label}</span>
                     </a>
                 ))}
             </div>
