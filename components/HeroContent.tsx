@@ -61,6 +61,19 @@ export default function HeroContent() {
                   Contact me
                 </MagneticButton>
 
+                <MagneticButton
+                    href="/AdityaKumar_CV.pdf"
+                    className="
+                      border
+                      border-white/10
+                      bg-black/20
+                      text-white
+                      hover:border-white/20
+                      hover:bg-white/10
+                    "
+                  >
+                    Download Resume
+                  </MagneticButton>
               </div>
 
               <div className="mt-10 flex flex-wrap gap-3">
