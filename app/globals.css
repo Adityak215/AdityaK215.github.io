@@ -1,26 +1,70 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 222 47% 6%;
+  --foreground: 210 40% 98%;
+
+  --card: 225 26% 11%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 225 26% 11%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 358 100% 66%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 225 18% 16%;
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 225 18% 16%;
+  --muted-foreground: 215 20% 70%;
+
+  --accent: 358 100% 66%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 225 18% 18%;
+  --input: 225 18% 18%;
+  --ring: 358 100% 66%;
+
+  --radius: 1.25rem;
+
+  --bg-main: #080b14;
+  --accent-primary: #ff5a5f;
+  --border-subtle: rgba(255, 255, 255, 0.08);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(255, 90, 95, 0.12), transparent 32%),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02), transparent 18%),
+    hsl(var(--background));
+  color: hsl(var(--foreground));
+  overflow-x: hidden;
+}
+
+::selection {
+  background: hsl(var(--primary) / 0.25);
+  color: white;
+}
+
+.bg-bgMain {
+  background: var(--bg-main);
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
 }

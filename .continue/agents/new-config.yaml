@@ -1,0 +1,24 @@
+name: Local Coding Config
+version: 0.0.1
+schema: v1
+
+models:
+  - name: Qwen 7B Chat
+    provider: ollama
+    model: qwen2.5:7b
+    roles:
+      - chat
+      - edit
+      - apply
+    # Optimizing for speed and stability
+    completionOptions:
+      temperature: 0.1
+      contextLength: 8192
+
+  - name: Qwen 3B Auto
+    provider: ollama
+    model: qwen2.5:3b
+    roles:
+      - autocomplete
+    autocompleteOptions:
+      debounceDelay: 350
