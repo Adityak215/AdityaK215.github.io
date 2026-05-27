@@ -24,11 +24,14 @@ export default function HeroContent() {
           </div>
 
           <h1 className="mt-6 max-w-4xl text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
-            Building reliable systems that feel fast, sharp, and human.
+            Aditya Kumar
           </h1>
+          <h2 className="mt-6 max-w-4xl text-5xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
+            Software Development Engineer
+          </h2>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-white/68">
-            I am Aditya Kumar, a software developer focused on backend
+            I am a software developer focused on backend
             engineering, Flutter apps, and product-ready experiences.
             My work centers on clean APIs, solid data design, and
             interfaces that feel polished enough to ship.
@@ -102,7 +105,7 @@ export default function HeroContent() {
             </div>
 
             <p className="mt-5 text-sm font-medium tracking-[0.3em] text-white/45 uppercase">
-              Software engineer
+              "Out to build something real."
             </p>
 
             <h2 className="mt-3 text-2xl font-semibold text-white">Backend depth, Mobile polish</h2>
